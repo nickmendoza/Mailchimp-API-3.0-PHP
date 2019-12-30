@@ -133,6 +133,9 @@ class MailchimpConnection implements HttpRequest
 
         // if an custom curl settings are present set them now
         $this->setCustomHandleOptions($this->current_settings->getCustomCurlSettings());
+
+	$this->setOption(CURLOPT_SSL_VERIFYHOST, 0);
+        $this->setOption(CURLOPT_SSL_VERIFYPEER, 0);
     }
 
     /**
